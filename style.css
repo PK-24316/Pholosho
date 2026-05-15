@@ -1,0 +1,432 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f6f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.profile-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin: 10px 0 25px;
+}
+
+/* Buttons */
+.buttons, .link-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background: #ffffff;
+  color: #203a43;
+  padding: 12px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #203a43;
+  color: #fff;
+}
+
+/* Sections */
+section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  color: #203a43;
+}
+
+.about p {
+  text-align: center;
+  font-size: 1.05rem;
+}
+
+/* Banner */
+.site-banner {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.banner-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hero Details with Photo + Info Side by Side */
+.hero-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  padding: 0 20px 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.hero-photo {
+  flex: 0 0 180px;
+}
+
+.profile-square {
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 4px solid #203a43;
+}
+
+.hero-info h1 {
+  font-size: 2.4rem;
+  color: #203a43;
+  margin-bottom: 8px;
+}
+
+.hero-info p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+/* Personal Contact Info */
+.contact-info a {
+  display: inline-block;
+  color: #0f2027;
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 6px;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #2c5364;
+  text-decoration: underline;
+}
+
+/* Make responsive on small screens */
+@media (max-width: 768px) {
+  .hero-details {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero-photo {
+    margin-bottom: 20px;
+  }
+}
+
+
+/* Interests Section – Enhanced */
+.interests ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* Interest Cards */
+.interests li {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: all 0.35s ease;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient hover overlay */
+.interests li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(32,58,67,0.9),
+    rgba(44,83,100,0.9)
+  );
+  transition: left 0.4s ease;
+  z-index: 0;
+}
+
+/* Hover Effects */
+.interests li:hover::before {
+  left: 0;
+}
+
+.interests li:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+  color: #ffffff;
+}
+
+/* Ensure text stays visible */
+.interests li {
+  z-index: 1;
+}
+
+.interests li * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile adjustment */
+@media (max-width: 600px) {
+  .interests ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Projects Section */
+.projects {
+  background: #f9fbfc;
+}
+
+.projects h2 {
+  margin-bottom: 40px;
+}
+
+/* Project Categories */
+.project-category {
+  margin-bottom: 50px;
+}
+
+.project-category h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #203a43;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Underline effect for category titles */
+.project-category h3::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #203a43, #2c5364);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Project Lists */
+.project-category ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* Project Cards */
+.project-category li {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: all 0.35s ease;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle gradient hover overlay */
+.project-category li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(32,58,67,0.9),
+    rgba(44,83,100,0.9)
+  );
+  transition: left 0.4s ease;
+  z-index: 0;
+}
+
+/* Hover Effects */
+.project-category li:hover::before {
+  left: 0;
+}
+
+.project-category li:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+  color: #ffffff;
+}
+
+/* Ensure text stays above overlay */
+.project-category li {
+  z-index: 1;
+}
+
+.project-category li * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive spacing */
+@media (max-width: 600px) {
+  .project-category ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Games Section */
+.games {
+  background: #f9fbfc;
+}
+
+/* Game Cards Layout */
+.game-category ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* Game Cards */
+.game-category li {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: all 0.35s ease;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient hover overlay */
+.game-category li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(32,58,67,0.9),
+    rgba(44,83,100,0.9)
+  );
+  transition: left 0.4s ease;
+  z-index: 0;
+}
+
+/* Hover Effects */
+.game-category li:hover::before {
+  left: 0;
+}
+
+.game-category li:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+  color: #ffffff;
+}
+
+/* Ensure text is visible above overlay */
+.game-category li * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Game Titles */
+.game-category h3 {
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+/* Game Descriptions */
+.game-category p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .game-category ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Footer */
+footer {
+  background: #203a43;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+
+.business {
+  margin: 60px 0;
+  text-align: center;
+}
+
+.business p {
+  max-width: 700px;
+  margin: 10px auto 25px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
